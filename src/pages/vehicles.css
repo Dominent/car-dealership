@@ -1,4 +1,4 @@
-.vehicles {
+#vehicles {
   display: grid;
   grid-row-gap: 30px;
   grid-column-gap: 10px;
@@ -6,26 +6,52 @@
   justify-content: space-evenly;
 }
 
-.vehicle {
+#vehicle {
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 500px;
-  height: 500px;
+  height: 400px;
   background-color: aquamarine;
   border: 1px black solid;
   border-radius: 5px;
 }
 
-.vehicle-image {
+#vehicle-name {
+  align-self: center;
+}
+
+#vehicle-image-stats {
   display: flex;
-  margin: auto;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#vehicle-image {
   width: 200px;
   border-radius: 5px;
 }
 
-.vehicle-description {
+#vehicle-description {
   width: 100%;
   height: auto;
   overflow-y: scroll;
+}
+
+#vehicle-stats {
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 100%;
+}
+
+#vehicle-orderbutton {
+  background-color: rgb(39, 29, 29);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
 }
