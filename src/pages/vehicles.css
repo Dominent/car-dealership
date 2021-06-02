@@ -1,0 +1,31 @@
+.vehicles {
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 500px);
+  justify-content: space-evenly;
+}
+
+.vehicle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.vehicle-image {
+  display: flex;
+  margin: auto;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.vehicle-description {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+}
