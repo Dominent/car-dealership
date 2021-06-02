@@ -4,7 +4,7 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
-import Vehicles from "./pages/vehicles";
+import Routes from "./Routes";
 
 function App() {
   const client = new ApolloClient({
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Vehicles />
+      <Routes />
     </ApolloProvider>
   );
 }
