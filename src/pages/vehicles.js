@@ -1,12 +1,10 @@
-import "./vehicles.css";
 import { useQuery } from "@apollo/client";
 import { GET_VEHICLES } from "../queries";
+import { Link } from "react-router-dom";
+import "./vehicles.css";
 
 const Vehicles = () => {
   const { loading, data } = useQuery(GET_VEHICLES);
-  const orderVehicle = (vehicle) => {
-    console.log(vehicle);
-  };
 
   if (loading) {
     return <h1>Loading Vehicles...</h1>;
@@ -32,12 +30,16 @@ const Vehicles = () => {
                 </div>
               </div>
               <p id="vehicle-description">{`${vehicle.description}`}</p>
-              <button
-                id="vehicle-orderbutton"
-                onClick={() => orderVehicle(vehicle)}
+              <Link
+                to={{
+                  pathname: "/Order",
+                  state: {
+                    vehicle: vehicle,
+                  },
+                }}
               >
-                Order vehicle
-              </button>
+                <button id="vehicle-orderbutton">Order vehicle</button>
+              </Link>
             </div>
           );
         })}
