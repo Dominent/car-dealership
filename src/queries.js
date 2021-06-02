@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import { gql, useMutation } from "@apollo/client";
 
 export const GET_VEHICLES = gql`
   query GetAllVehicles {
@@ -18,8 +18,20 @@ export const GET_VEHICLES = gql`
   }
 `;
 
-// mutation CreateOrder($customerName: String!, $customerEmail: String!, $vehicleId:ID) {
-//   createOrder(data: {customerName: $customerName, customerEmail: $customerEmail, vehicle: {connect: {id: $vehicleId}}}) 		           {
-// 	id
-//   	}
-// }
+export const CREATE_ORDER = gql`
+  mutation CreateOrder(
+    $customerName: String!
+    $customerEmail: String!
+    $vehicleId: ID
+  ) {
+    createOrder(
+      data: {
+        customerName: $customerName
+        customerEmail: $customerEmail
+        vehicle: { connect: { id: $vehicleId } }
+      }
+    ) {
+      id
+    }
+  }
+`;
