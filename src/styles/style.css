@@ -97,7 +97,8 @@
   gap: 10px;
 }
 
-#order-wrap {
+#order-wrap,
+#order-success {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,6 +116,14 @@
 #order-email,
 #order-submit {
   border-radius: 5px;
+}
+
+#order-success {
+  background: #353941;
+  border-radius: 5px;
+  width: 400px;
+  margin: auto;
+  padding: 30px;
 }
 
 /* width */

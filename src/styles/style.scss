@@ -81,7 +81,8 @@ $tertiaryColor: rgb(53, 57, 65);
   gap: 10px;
 }
 
-#order-wrap {
+#order-wrap,
+#order-success {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,6 +93,14 @@ $tertiaryColor: rgb(53, 57, 65);
 #order-email,
 #order-submit {
   border-radius: $borderRadius;
+}
+
+#order-success {
+  background: $tertiaryColor;
+  border-radius: $borderRadius;
+  width: 400px;
+  margin: auto;
+  padding: 30px;
 }
 
 /* width */
