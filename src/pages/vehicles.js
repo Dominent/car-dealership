@@ -1,7 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_VEHICLES } from "../queries";
 import { Link } from "react-router-dom";
-import "./vehicles.css";
 
 const Vehicles = () => {
   const { loading, data } = useQuery(GET_VEHICLES);

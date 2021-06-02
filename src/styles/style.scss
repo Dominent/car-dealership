@@ -1,0 +1,117 @@
+$borderRadius: 5px;
+$primaryColor: white;
+$secondaryColor: rgb(0, 238, 255);
+$tertiaryColor: rgb(53, 57, 65);
+
+#vehicles {
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 500px);
+  justify-content: space-evenly;
+}
+
+#vehicle {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 500px;
+  height: 400px;
+  background-color: $tertiaryColor;
+  border: 1px black solid;
+  border-radius: $borderRadius;
+}
+
+#vehicle-name {
+  align-self: center;
+  color: $secondaryColor;
+}
+
+// wrapper around image and stats
+#vehicle-image-stats {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#vehicle-image {
+  width: 200px;
+  border-radius: $borderRadius;
+}
+
+#vehicle-stats {
+  color: $primaryColor;
+  border-radius: $borderRadius;
+  width: 100%;
+}
+
+#vehicle-description {
+  color: $primaryColor;
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+}
+
+#vehicle-orderbutton,
+#order-submit {
+  background-color: rgb(39, 29, 29);
+  border: none;
+  color: $primaryColor;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: $borderRadius;
+}
+
+#vehicle-orderbutton:hover,
+#order-submit:hover {
+  color: $secondaryColor;
+}
+
+#order-fields {
+  padding: 20px;
+  width: 400px;
+  background: $tertiaryColor;
+  border-radius: $borderRadius;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 10px;
+}
+
+#order-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#order-name,
+#order-email,
+#order-submit {
+  border-radius: $borderRadius;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: $borderRadius;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: $borderRadius;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

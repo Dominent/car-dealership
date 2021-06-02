@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CREATE_ORDER } from "../queries";
 import { Link } from "react-router-dom";
-import "./order.css";
 
 const OrderPage = () => {
+  console.log("XD");
   const location = useLocation();
   const { vehicle } = location.state;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [createOrder, { data }] = useMutation(CREATE_ORDER);
   const onNameChange = (e) => {
     setName(e.target.value);
   };
@@ -18,7 +18,7 @@ const OrderPage = () => {
     setEmail(e.target.value);
   };
   const onSubmit = () => {
-    console.log(data);
+    console.log(vehicle);
     createOrder({
       variables: {
         customerName: name,
@@ -26,9 +26,7 @@ const OrderPage = () => {
         vehicleId: vehicle.id,
       },
     });
-    console.log(name, email);
   };
-  const [createOrder, { data }] = useMutation(CREATE_ORDER);
 
   if (data) {
     return (
@@ -43,16 +41,31 @@ const OrderPage = () => {
 
   return (
     <div id="order-wrap">
-      <img
-        id="image"
-        src={vehicle.image.url}
-        alt={`Tesla ${vehicle.image.filename}`}
-      ></img>
-      <div id="order-fields">
-        <input onChange={onNameChange} />
-        <input onChange={onEmailChange} />
-        <button onClick={onSubmit}>Submit</button>
+      <div id="vehicle" key={vehicle.id}>
+        <h4 id="vehicle-name">{vehicle.name}</h4>
+        <div id="vehicle-image-stats">
+          <img
+            id="vehicle-image"
+            src={vehicle.image.url}
+            alt={`Tesla ${vehicle.image.filename}`}
+          ></img>
+          <div id="vehicle-stats">
+            <p id="vehicle-price">{`Price: ${vehicle.price}`}</p>
+            <p id="vehicle-mileage">{`Mileage: ${vehicle.mileage}`}</p>
+            <p id="vehicle-vin">{`Vin: ${vehicle.vin}`}</p>
+            <p id="vehicle-year">{`Year: ${vehicle.year}`}</p>
+          </div>
+        </div>
+        <p id="vehicle-description">{`${vehicle.description}`}</p>
       </div>
+      <form id="order-fields">
+        <h4 id="vehicle-name">Please provide your name and email</h4>
+        <input placeholder="Name" id="order-name" onChange={onNameChange} />
+        <input placeholder="Email" id="order-email" onChange={onEmailChange} />
+        <button id="order-submit" onClick={onSubmit}>
+          Order vehicle
+        </button>
+      </form>
     </div>
   );
 };
