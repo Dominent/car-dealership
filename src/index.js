@@ -6,7 +6,11 @@ import "./styles/style.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div id="outer-wrap">
+      <div id="inner-wrap">
+        <App />
+      </div>
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );

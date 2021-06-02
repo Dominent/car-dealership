@@ -6,7 +6,11 @@ const Vehicles = () => {
   const { loading, data } = useQuery(GET_VEHICLES);
 
   if (loading) {
-    return <h1>Loading Vehicles...</h1>;
+    return (
+      <div id="loading-wrap">
+        <h1>Loading Vehicles...</h1>
+      </div>
+    );
   }
 
   return (

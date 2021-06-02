@@ -1,8 +1,21 @@
 $borderRadius: 5px;
 $primaryColor: white;
-$secondaryColor: rgb(0, 238, 255);
+$secondaryColor: rgb(20, 255, 243);
 $tertiaryColor: rgb(53, 57, 65);
 $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+#outer-wrap {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: auto;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
 
 #vehicles {
   display: grid;
@@ -25,7 +38,8 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
   box-shadow: $materialBoxShadow;
 }
 
-#vehicle-name {
+#vehicle-name,
+#title {
   align-self: center;
   color: $secondaryColor;
 }
@@ -57,9 +71,9 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
 
 #vehicle-orderbutton,
 #order-submit {
-  background-color: rgb(39, 29, 29);
+  background-color: $secondaryColor;
   border: none;
-  color: $primaryColor;
+  color: $tertiaryColor;
   padding: 10px 32px;
   margin: auto;
   text-align: center;
@@ -70,7 +84,7 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
 
 #vehicle-orderbutton:hover,
 #order-submit:hover {
-  color: $secondaryColor;
+  color: $primaryColor;
 }
 
 #order-fields {
@@ -94,9 +108,22 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
 }
 
 #order-name,
-#order-email,
-#order-submit {
+#order-email {
   border-radius: $borderRadius;
+  outline: transparent;
+  border: none;
+  height: 20px;
+
+  // padding 12px 20px
+  // font-size 1rem
+  // border-width calc(var(--border-width) * 1px)
+  // border-style solid
+  // border-color var(--accent)
+  // border-radius calc(var(--border-radius) * 1px)
+  // text-align center
+  // outline transparent
+  // width 100%
+  // transition border-color calc(var(--transition, 0.2) * 1s) ease
 }
 
 #order-success {
@@ -107,7 +134,7 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
   padding: 30px;
 }
 
-/* width */
+/* Width */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -127,4 +154,13 @@ $materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+#loading-wrap {
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }

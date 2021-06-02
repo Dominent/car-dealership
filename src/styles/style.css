@@ -1,13 +1,26 @@
+#outer-wrap {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: auto;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
 #vehicles {
   display: -ms-grid;
   display: grid;
   grid-row-gap: 30px;
   grid-column-gap: 10px;
-  -ms-grid-columns: (500px) [auto-fill];
-  grid-template-columns: repeat(auto-fill, 500px);
+  -ms-grid-columns: (500px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 500px);
   -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 #vehicle {
@@ -17,25 +30,24 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 5px;
   width: 500px;
   height: 400px;
   background-color: #353941;
   border: 1px black solid;
   border-radius: 5px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-    0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 #vehicle-name,
 #title {
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
-  color: #00eeff;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #14fff3;
 }
 
 #vehicle-image-stats {
@@ -44,8 +56,8 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: 20px;
 }
 
@@ -69,9 +81,9 @@
 
 #vehicle-orderbutton,
 #order-submit {
-  background-color: #271d1d;
+  background-color: #14fff3;
   border: none;
-  color: white;
+  color: #353941;
   padding: 10px 32px;
   margin: auto;
   text-align: center;
@@ -82,7 +94,7 @@
 
 #vehicle-orderbutton:hover,
 #order-submit:hover {
-  color: #00eeff;
+  color: white;
 }
 
 #order-fields {
@@ -90,18 +102,17 @@
   width: 400px;
   background: #353941;
   border-radius: 5px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-    0 1px 2px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   gap: 10px;
 }
 
@@ -112,18 +123,20 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 20px;
 }
 
 #order-name,
-#order-email,
-#order-submit {
+#order-email {
   border-radius: 5px;
+  outline: transparent;
+  border: none;
+  height: 20px;
 }
 
 #order-success {
@@ -134,7 +147,7 @@
   padding: 30px;
 }
 
-/* width */
+/* Width */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -154,5 +167,14 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+#loading-wrap {
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 /*# sourceMappingURL=style.css.map */
