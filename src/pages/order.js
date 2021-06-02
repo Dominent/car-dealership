@@ -17,14 +17,14 @@ const OrderPage = () => {
     setEmail(e.target.value);
   };
   const onSubmit = () => {
-    console.log(vehicle);
-    createOrder({
-      variables: {
-        customerName: name,
-        customerEmail: email,
-        vehicleId: vehicle.id,
-      },
-    });
+    if (name !== "" && email !== "")
+      createOrder({
+        variables: {
+          customerName: name,
+          customerEmail: email,
+          vehicleId: vehicle.id,
+        },
+      });
   };
   const [createOrder, { data }] = useMutation(CREATE_ORDER);
 
