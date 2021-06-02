@@ -77,6 +77,8 @@
   width: 100%;
   height: auto;
   overflow-y: scroll;
+  text-align: justify;
+  padding-right: 5px;
 }
 
 #vehicle-orderbutton,
