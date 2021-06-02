@@ -2,6 +2,7 @@ $borderRadius: 5px;
 $primaryColor: white;
 $secondaryColor: rgb(0, 238, 255);
 $tertiaryColor: rgb(53, 57, 65);
+$materialBoxShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
 #vehicles {
   display: grid;
@@ -21,6 +22,7 @@ $tertiaryColor: rgb(53, 57, 65);
   background-color: $tertiaryColor;
   border: 1px black solid;
   border-radius: $borderRadius;
+  box-shadow: $materialBoxShadow;
 }
 
 #vehicle-name {
@@ -59,6 +61,7 @@ $tertiaryColor: rgb(53, 57, 65);
   border: none;
   color: $primaryColor;
   padding: 10px 32px;
+  margin: auto;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -75,6 +78,7 @@ $tertiaryColor: rgb(53, 57, 65);
   width: 400px;
   background: $tertiaryColor;
   border-radius: $borderRadius;
+  box-shadow: $materialBoxShadow;
   display: flex;
   flex-direction: column;
   align-content: center;

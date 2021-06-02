@@ -17,7 +17,9 @@ const OrderPage = () => {
     setEmail(e.target.value);
   };
   const onSubmit = () => {
+    // Check if fields are filled before sending
     if (name !== "" && email !== "")
+      // GraphQL mutation
       createOrder({
         variables: {
           customerName: name,
@@ -28,6 +30,7 @@ const OrderPage = () => {
   };
   const [createOrder, { data }] = useMutation(CREATE_ORDER);
 
+  // Order successfully received screen
   if (data) {
     return (
       <div id="order-success">
@@ -41,6 +44,9 @@ const OrderPage = () => {
 
   return (
     <div id="order-wrap">
+      <div id="order-fields">
+        <h1 id="title">Finalize Order</h1>
+      </div>
       <div id="vehicle">
         <h4 id="vehicle-name">{vehicle.name}</h4>
         <div id="vehicle-image-stats">
@@ -59,7 +65,7 @@ const OrderPage = () => {
         <p id="vehicle-description">{`${vehicle.description}`}</p>
       </div>
       <div id="order-fields">
-        <h4 id="vehicle-name">Please provide your name and email</h4>
+        <h4 id="title">Please provide your name and email</h4>
         <input
           value={name}
           placeholder="Name"
