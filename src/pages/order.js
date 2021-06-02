@@ -5,12 +5,11 @@ import { CREATE_ORDER } from "../queries";
 import { Link } from "react-router-dom";
 
 const OrderPage = () => {
-  console.log("XD");
   const location = useLocation();
   const { vehicle } = location.state;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [createOrder, { data }] = useMutation(CREATE_ORDER);
+
   const onNameChange = (e) => {
     setName(e.target.value);
   };
@@ -27,13 +26,14 @@ const OrderPage = () => {
       },
     });
   };
+  const [createOrder, { data }] = useMutation(CREATE_ORDER);
 
   if (data) {
     return (
-      <div id="order-fields">
-        <h1>Order successful!</h1>
+      <div id="order-success">
+        <h1 id="vehicle-name">Order successful!</h1>
         <Link to="/">
-          <button>Return to homepage</button>
+          <button id="order-submit">Return to homepage</button>
         </Link>
       </div>
     );
@@ -41,13 +41,13 @@ const OrderPage = () => {
 
   return (
     <div id="order-wrap">
-      <div id="vehicle" key={vehicle.id}>
+      <div id="vehicle">
         <h4 id="vehicle-name">{vehicle.name}</h4>
         <div id="vehicle-image-stats">
           <img
             id="vehicle-image"
             src={vehicle.image.url}
-            alt={`Tesla ${vehicle.image.filename}`}
+            alt={vehicle.image.filename}
           ></img>
           <div id="vehicle-stats">
             <p id="vehicle-price">{`Price: ${vehicle.price}`}</p>
@@ -58,14 +58,24 @@ const OrderPage = () => {
         </div>
         <p id="vehicle-description">{`${vehicle.description}`}</p>
       </div>
-      <form id="order-fields">
+      <div id="order-fields">
         <h4 id="vehicle-name">Please provide your name and email</h4>
-        <input placeholder="Name" id="order-name" onChange={onNameChange} />
-        <input placeholder="Email" id="order-email" onChange={onEmailChange} />
+        <input
+          value={name}
+          placeholder="Name"
+          id="order-name"
+          onChange={onNameChange}
+        />
+        <input
+          value={email}
+          placeholder="Email"
+          id="order-email"
+          onChange={onEmailChange}
+        />
         <button id="order-submit" onClick={onSubmit}>
           Order vehicle
         </button>
-      </form>
+      </div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const Vehicles = () => {
                 <img
                   id="vehicle-image"
                   src={vehicle.image.url}
-                  alt={`Tesla ${vehicle.image.filename}`}
+                  alt={vehicle.image.filename}
                 ></img>
                 <div id="vehicle-stats">
                   <p id="vehicle-price">{`Price: ${vehicle.price}`}</p>
